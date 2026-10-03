@@ -9,10 +9,6 @@ from safety.bias_detector import BiasDetector
 class TestBiasDetector:
     """Test suite for BiasDetector."""
 
-    @pytest.mark.xfail(
-        strict=True,
-        reason="issue #58: bias detector patterns are too narrow to match common phrasings",
-    )
     def test_dismissive_bootcamp_language_detected(self):
         """Test dismissive bootcamp language is detected as biased."""
         text = "bootcamp graduates can't write production code"
@@ -74,10 +70,6 @@ class TestBiasDetector:
 
         assert is_biased is False
 
-    @pytest.mark.xfail(
-        strict=True,
-        reason="issue #58: bias detector patterns are too narrow to match common phrasings",
-    )
     def test_demographic_assumption_age_detected(self):
         """Test demographic assumption about age detected."""
         text = "young developers can't handle complex systems"
@@ -195,10 +187,6 @@ class TestBiasDetector:
 
         assert is_biased is False
 
-    @pytest.mark.xfail(
-        strict=True,
-        reason="issue #58: bias detector patterns are too narrow to match common phrasings",
-    )
     def test_coding_bootcamp_variant(self):
         """Test 'coding bootcamp' variant is detected."""
         text = "coding bootcamp graduates can't write enterprise code"
@@ -230,10 +218,6 @@ class TestBiasDetector:
         assert is_biased_dev is True
         assert is_biased_prog is True
 
-    @pytest.mark.xfail(
-        strict=True,
-        reason="issue #58: bias detector patterns are too narrow to match common phrasings",
-    )
     def test_multiple_bias_indicators(self):
         """Test text with multiple bias indicators."""
         text = (
