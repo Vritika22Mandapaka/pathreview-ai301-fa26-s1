@@ -13,7 +13,7 @@ class BiasDetector:
     # Genuinely dismissive phrases about educational background
     DISMISSIVE_PATTERNS = [
         r"(?:bootcamp|self-taught|online\s+course)\s+(?:education|training)\s+is\s+(?:insufficient|inadequate|lacks)",
-        r"(?:only\s+)?attended\s+(?:a\s+)?(?:coding\s+)?bootcamp.{0,60}\b(?:lacks?|missing)\s+(?:the\s+)?(?:rigor|fundamentals|proper\s+training)\b",
+        r"(?:only\s+)?attended\s+(?:a\s+)?(?:coding\s+)?bootcamp[^.!?]{0,60}\b(?:lacks?|missing)\s+(?:the\s+)?(?:rigor|fundamentals|proper\s+training)\b",
         r"(?:bootcamp|self-taught)\s+(?:graduates?|developers?)\s+(?:(?:lack|missing)\s+(?:rigor|fundamentals|proper\s+training)|(?:can't|cannot)\s+(?:write|handle|build|develop)\b)",
         r"(?:bootcamp|coding\s+bootcamp)\s+(?:doesn't|does\s+not)\s+prepare\s+(?:you|developers?)",
         r"(?:self-taught|bootcamp)\s+is\s+(?:not|never)\s+(?:equal|comparable)\s+to\s+(?:university|traditional|formal)",

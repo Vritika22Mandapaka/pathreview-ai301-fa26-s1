@@ -68,6 +68,7 @@ class TestBiasDetector:
             "The candidate attended a coding bootcamp and demonstrated strong fundamentals.",
             "The bootcamp project lacks documentation, but the developer has strong technical skills.",
             "Young developers can handle complex systems with appropriate training.",
+            "She attended a coding bootcamp last year. The legacy module is missing proper training data.",
         ]
 
         for text in neutral_examples:
