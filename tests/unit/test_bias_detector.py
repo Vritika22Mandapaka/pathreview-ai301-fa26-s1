@@ -62,6 +62,19 @@ class TestBiasDetector:
 
         assert is_biased is False
 
+    def test_expanded_patterns_do_not_flag_neutral_feedback(self):
+        """Ensure widened patterns do not flag neutral feedback."""
+        neutral_examples = [
+            "The candidate attended a coding bootcamp and demonstrated strong fundamentals.",
+            "The bootcamp project lacks documentation, but the developer has strong technical skills.",
+            "Young developers can handle complex systems with appropriate training.",
+        ]
+
+        for text in neutral_examples:
+            is_biased, reason = BiasDetector.detect_bias(text)
+            assert is_biased is False, f"False positive for: {text}"
+            assert reason == ""
+
     def test_educational_background_positive_not_flagged(self):
         """Test positive educational background mention not flagged."""
         text = "your bootcamp training has given you a solid foundation"
